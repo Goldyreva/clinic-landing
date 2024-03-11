@@ -1,0 +1,40 @@
+@import 'const';
+
+.banner {
+    background-color: #F8FBFA;
+    &__image {
+        width: 100%;
+        height: 288px;
+        object-fit: cover;
+    }
+    &__text {
+        padding: 40px 20px 60px;
+        max-width: 570px;
+        & h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .banner {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        &__text {
+            margin-left: 10%;
+            padding: 20px 100px 20px 0;
+            align-self: center;
+            & p {
+                font-size: 16px;
+            }
+        }
+        &__image {
+            width: 50%;
+            height: auto;
+            max-height: 533px;
+        }
+    }
+}

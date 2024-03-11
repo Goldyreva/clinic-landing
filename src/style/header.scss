@@ -1,0 +1,127 @@
+@import 'const';
+
+.header {
+    width: 100%;
+    padding: 20px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1140px;
+    }
+    &__mobile-menu-button {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        & span, & span:after, & span:before {
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            background: $primary-green;
+            margin: 0 auto;
+            transition: all .2s linear;
+        }
+        & span {
+            top: 20px;
+        } 
+        & span:after {
+            content: '';
+            bottom: 10px;
+        }
+        & span:before {
+            content: '';
+            top: 10px;
+        }
+    }
+    &__phone {
+        color: $primary-text-color;
+        transition: color .2s linear;
+        font-size: 16px;
+        &:hover {
+            color: $primary-green;
+        }
+    }
+    &__block-left {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 60px;
+        display: flex;
+        &__image {
+            fill: $button-bg;
+            max-width: 100%;
+            transition: fill .2s linear;
+        }
+        &:hover &__image {
+            fill: $primary-green;
+        }
+    }
+    &__address {
+        margin-left: 20px;
+        font-size: $basic-font-size;
+        text-align: end;
+        &__icon {
+            width: 20px;
+            margin-right: 5px;
+        }
+        &__street {
+            color: $secondary-text-color;
+            margin-left: 25px;
+        }
+        
+    }
+}
+
+body.opened-menu .header__mobile-menu-button {
+    & span {
+        background-color: transparent;
+    }
+    & span:before {
+        transform: rotate(46deg);
+        top: 0px;
+    }
+    & span:after {
+        transform: rotate(-46deg);
+        bottom: 0px;
+    } 
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        &__inner {
+            width: 80%;
+            margin: 0 auto;
+        }
+        &__block-right {
+            display: flex;
+            align-items: center;
+        }
+        &__phone {
+            display: flex;
+            align-items: center;
+            margin-right: 36px;
+            &__icon {
+                margin-right: 10px;
+            }
+        }
+        &__block-left {
+            width: auto;
+            justify-content: flex-start;
+        }
+        &__logo {
+            width: 90px;
+        }
+        &__address {
+            align-items: flex-start;
+            text-align: start;
+            &__city {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

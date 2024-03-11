@@ -1,0 +1,73 @@
+@import 'const';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: white;
+}
+
+body.opened-popup, body.opened-menu {
+    overflow-y: hidden;
+}
+p, a, h1, h2, label, input, li, h1, h2, h3, span, input::placeholder {
+    font-family: $font-family;
+    color: $primary-text-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.button {
+    padding: 16px 24px;
+    border-radius: 50px;
+    transition: background-color .2s linear;
+    font-size: $basic-font-size;
+    cursor: pointer;
+}
+
+.primary-button {
+    color: white;
+    background-color: $button-bg;
+    &:hover, &:active {
+        background-color: $button-bg-hover;
+    }
+}
+
+.arrow {
+    cursor: pointer;
+    & path {
+        fill: #E1E1E1;
+        transition: fill .2s linear;
+    }
+    &:hover path, &:active path{
+        fill: $primary-green;
+    }
+}
+
+.secondary-button {
+    color: $button-bg;
+    border: 1px solid $button-bg;
+    &:hover, &:active {
+        background-color: $button-bg;
+        color: white;
+    }
+}
+
+
+.pc-only {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .mobile-only {
+        display: none;
+    }
+    .pc-only {
+        display: block;
+    }
+}
